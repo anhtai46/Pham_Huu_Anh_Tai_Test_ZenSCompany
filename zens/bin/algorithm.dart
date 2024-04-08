@@ -1,15 +1,19 @@
 void miniMaxSum(List<int> arr) {
-  List<double> doubleArr = arr.map((e) => e.toDouble()).toList();
+  List<int> sortedArr = List.from(arr)..sort();
 
-  doubleArr.sort();
+  int min = sortedArr.sublist(0, 4).reduce((a, b) => a + b);
+  int max = sortedArr.sublist(1).reduce((a, b) => a + b);
 
-  double min = doubleArr.sublist(0, 4).reduce((a, b) => a + b);
-  double max = doubleArr.sublist(1).reduce((a, b) => a + b);
+  if (sortedArr.length == 4) {
+    int sum = sortedArr.reduce((a, b) => a + b);
+    print(sum);
+    return;
+  }
 
   print('$min $max');
 }
 
 void main() {
-  List<int> arr = [1, 3, 5, 7, 9];
+  List<int> arr = [1, 2, 3, 4, 5];
   miniMaxSum(arr);
 }

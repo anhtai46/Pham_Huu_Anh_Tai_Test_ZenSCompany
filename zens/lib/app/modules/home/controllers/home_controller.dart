@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   var currentJoke = "".obs;
-  var jokeHistory = <String>[].obs;
+  // var jokeHistory = <String>[].obs;
   bool isRead = false;
   int count = 0;
 
@@ -31,7 +31,6 @@ class HomeController extends GetxController {
     count++;
 
     if (count >= jokes.length) {
-      count = 0;
       Get.snackbar(
         icon: const Icon(Icons.notification_important_rounded),
         'Notification',
